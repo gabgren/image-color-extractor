@@ -4,15 +4,15 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt 
 
-st.title("Image Color Pallete Extractor")
+st.title("Image Color Palette Extractor")
 
 img=st.file_uploader('Upload any image and give number of colors to extract')
 
 
 with st.sidebar:
     st.image("src/icons/2867978.png")
-    st.header("Image Color Pallete Extractor")
-    st.text("""Image dominant color pallete 
+    st.header("Image Color Palette Extractor")
+    st.text("""Image dominant color palette 
 extractor using 
 K-Means Clustering.
 Based on number of colors given, 
