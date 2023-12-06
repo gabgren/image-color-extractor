@@ -15,7 +15,7 @@ with st.sidebar:
     st.text("""Image dominant color pallete 
 extractor using 
 K-Means Clustering.
-Based on numbers of colors given, 
+Based on number of colors given, 
 clusters are created.
     """)
 
