@@ -24,17 +24,19 @@ if img is not None :
     st.image(img)
 
     img1=Image.open(img)
-    data=np.array(img1).reshape((img1.size[0]*img1.size[1],3))
+
+    data=np.array(img1)
+    data_transformed=data.reshape((data.shape[0]*data.shape[1],data.shape[2]))
 
     num_clusters=st.number_input(label='Enter number of colors to extract',step=1,min_value=1,max_value=8)
 
     if num_clusters is not None:
         if st.button('Run🚀'):
             model=KMeans(n_clusters=num_clusters)
-            clusters=model.fit_predict(data)
+            clusters=model.fit_predict(data_transformed)
 
             color_list=['#{:02x}{:02x}{:02x}'.format(int(i[0]),int(i[1]),int(i[2])) for i in model.cluster_centers_]
-            palette=np.zeros((1,num_clusters,3),dtype=np.uint8)
+            palette=np.zeros((1,num_clusters,data.shape[2]),dtype=np.uint8)
             palette[:,:]=model.cluster_centers_
 
             fig=plt.figure()
