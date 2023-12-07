@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 st.title("Image Color Palette Extractor")
 
-img=st.file_uploader('Upload any image and give number of colors to extract')
+img=st.file_uploader('Upload any image (png, jpg or jpeg) and give number of colors to extract',type=['png', 'jpg','jpeg'])
 
 
 with st.sidebar:
